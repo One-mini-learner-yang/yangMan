@@ -1,0 +1,17 @@
+server:
+  port: 4000
+spring:
+  application:
+    name: yang-crowd-auth
+
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:1000/eureka/
