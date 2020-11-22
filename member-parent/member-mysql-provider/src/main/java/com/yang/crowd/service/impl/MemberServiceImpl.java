@@ -4,10 +4,14 @@ import com.yang.crowd.entity.po.MemberPO;
 import com.yang.crowd.entity.po.MemberPOExample;
 import com.yang.crowd.mapper.MemberPOMapper;
 import com.yang.crowd.service.MemberService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+@Slf4j
 @Transactional(readOnly = true)
 @Service
 public class MemberServiceImpl  implements MemberService {
@@ -20,5 +24,25 @@ public class MemberServiceImpl  implements MemberService {
         MemberPOExample.Criteria criteria=memberPOExample.createCriteria();
         criteria.andLoginacctEqualTo(loginAcct);
         return  memberPOMapper.selectByExample(memberPOExample).get(0);
+    }
+    @Transactional(propagation = Propagation.REQUIRES_NEW,rollbackFor = Exception.class)
+    @Override
+    public void saveMember(MemberPO memberPO) {
+        memberPOMapper.insertSelective(memberPO);
+    }
+
+    @Override
+    public boolean isExistMember(String loginacct) {
+        log.info(loginacct);
+        MemberPOExample memberPOExample=new MemberPOExample();
+        MemberPOExample.Criteria criteria=memberPOExample.createCriteria();
+        criteria.andLoginacctEqualTo(loginacct);
+        MemberPO memberPO=memberPOMapper.selectByExample(memberPOExample).get(0);
+        if (memberPO==null){
+            log.info("1111");
+            return false;
+        }else {
+            return true;
+        }
     }
 }

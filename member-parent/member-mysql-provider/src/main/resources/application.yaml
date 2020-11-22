@@ -21,7 +21,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 mybatis:
-  mapper-locations: classpath*:/mybatis/mapper/*Mapper.xml
+  mapper-locations: MemberPOMapper.xml
 
 logging:
   level:

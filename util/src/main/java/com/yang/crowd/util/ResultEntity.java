@@ -1,8 +1,11 @@
 package com.yang.crowd.util;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
+@NoArgsConstructor
 public class ResultEntity<T> {
     public static final String SUCCESS="SUCCESS";
     public static final String FAILED="FAILED";

@@ -11,4 +11,7 @@ public class CrowdConstant {
 
     public static final String ATTR_NAME_PAGE_INFO="pageInfo";
     public static final String MESSAGE_REMOVE_USER_SELF="自身用户不可删除";
+    public static final String REDIS_CODE_PREFIX="REDIS_CODE_PREFIX_";
+    public static final String ATTR_NAME_MESSAGE="message";
+    public static final String MESSAGE_CODE_IS_WRONG="验证码错误！";
 }

@@ -4,9 +4,15 @@ spring:
   application:
     name: yang-crowd-auth
 
+
   thymeleaf:
     prefix: classpath:/templates/
     suffix: .html
+    #springCloud 的2.1.0以上版本的，将不再默认支持 FeignClient 的name属性 的相同名字。
+    #即 ：多个接口上的@FeignClient(“相同服务名”)会报错，overriding is disabled(覆盖 是 禁止的/关闭的)
+    #此处配置开启即可
+  main:
+    allow-bean-definition-overriding: true
 
 
 eureka:
@@ -15,3 +21,12 @@ eureka:
     register-with-eureka: true
     service-url:
       defaultZone: http://localhost:1000/eureka/
+
+
+short:
+  message:
+    host: https://smssend.shumaidata.com
+    path: /sms/send
+    method: POST
+    appCode: b6b2db022be1461ea79df1bdeb0b1ffa
+    skin: M09DD535F4
