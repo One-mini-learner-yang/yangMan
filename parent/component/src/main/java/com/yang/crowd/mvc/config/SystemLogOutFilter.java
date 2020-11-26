@@ -1,6 +1,6 @@
 package com.yang.crowd.mvc.config;
 
-import com.yang.crowd.CrowdConstant;
+import com.yang.crowd.constant.CrowdConstant;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.filter.authc.LogoutFilter;
 import org.slf4j.Logger;

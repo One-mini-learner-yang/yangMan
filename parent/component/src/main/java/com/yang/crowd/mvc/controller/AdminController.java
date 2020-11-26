@@ -1,7 +1,7 @@
 package com.yang.crowd.mvc.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.yang.crowd.CrowdConstant;
+import com.yang.crowd.constant.CrowdConstant;
 import com.yang.crowd.entity.Admin;
 import com.yang.crowd.exception.LoginFailedException;
 import com.yang.crowd.service.AdminService;

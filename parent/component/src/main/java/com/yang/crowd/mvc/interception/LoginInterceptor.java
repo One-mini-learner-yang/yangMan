@@ -1,6 +1,6 @@
 package com.yang.crowd.mvc.interception;
 
-import com.yang.crowd.CrowdConstant;
+import com.yang.crowd.constant.CrowdConstant;
 import com.yang.crowd.entity.Admin;
 import com.yang.crowd.exception.AccessForBiddenException;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

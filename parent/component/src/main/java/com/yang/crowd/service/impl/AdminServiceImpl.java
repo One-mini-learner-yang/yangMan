@@ -2,7 +2,7 @@ package com.yang.crowd.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.yang.crowd.CrowdConstant;
+import com.yang.crowd.constant.CrowdConstant;
 import com.yang.crowd.entity.Admin;
 import com.yang.crowd.entity.AdminExample;
 import com.yang.crowd.exception.LoginAcctAlreadyInUseException;

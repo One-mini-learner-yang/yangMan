@@ -1,9 +1,8 @@
 package com.yang.crowd.util;
 
-import com.yang.crowd.CrowdConstant;
+import com.yang.crowd.constant.CrowdConstant;
 import org.apache.http.HttpResponse;
 import org.apache.http.StatusLine;
-import org.apache.http.util.EntityUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.math.BigInteger;

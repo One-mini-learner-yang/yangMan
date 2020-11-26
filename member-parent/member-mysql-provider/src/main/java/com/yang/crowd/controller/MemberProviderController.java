@@ -1,6 +1,6 @@
 package com.yang.crowd.controller;
 
-import com.yang.crowd.CrowdConstant;
+import com.yang.crowd.constant.CrowdConstant;
 import com.yang.crowd.entity.po.MemberPO;
 import com.yang.crowd.service.MemberService;
 import com.yang.crowd.util.ResultEntity;

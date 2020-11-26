@@ -9,11 +9,8 @@ import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class MemberVO implements Serializable {
-    private String loginacct;
-    private String userpswd;
+public class MemberLoginVO implements Serializable {
+    private int id;
     private String username;
     private String email;
-    private String phoneNum;
-    private String code;
 }

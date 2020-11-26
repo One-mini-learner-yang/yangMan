@@ -14,6 +14,12 @@ spring:
           uri: lb://yang-crowd-auth
           predicates:
             - Path=/**
+#          filters:
+#            - TokenGatewayFilterFactory
+  redis:
+    host: 192.168.234.128
+#  session:
+#    store-type: redis
 eureka:
   client:
     fetch-registry: true

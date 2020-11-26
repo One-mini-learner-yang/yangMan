@@ -13,6 +13,10 @@ spring:
     #此处配置开启即可
   main:
     allow-bean-definition-overriding: true
+  redis:
+    host: 192.168.234.128
+#  session:
+#    store-type: redis
 
 
 eureka:
@@ -22,7 +26,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:1000/eureka/
 
-
 short:
   message:
     host: https://smssend.shumaidata.com
@@ -30,3 +33,6 @@ short:
     method: POST
     appCode: b6b2db022be1461ea79df1bdeb0b1ffa
     skin: M09DD535F4
+ribbon:
+  ReadTimeout: 10000
+  ConnectTimeout: 10000

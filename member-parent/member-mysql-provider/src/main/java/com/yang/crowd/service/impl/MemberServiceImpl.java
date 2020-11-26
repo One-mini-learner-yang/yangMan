@@ -23,7 +23,11 @@ public class MemberServiceImpl  implements MemberService {
         MemberPOExample memberPOExample=new MemberPOExample();
         MemberPOExample.Criteria criteria=memberPOExample.createCriteria();
         criteria.andLoginacctEqualTo(loginAcct);
-        return  memberPOMapper.selectByExample(memberPOExample).get(0);
+        List<MemberPO> list= memberPOMapper.selectByExample(memberPOExample);
+        if (list==null||list.size()==0){
+            return null;
+        }
+        return  list.get(0);
     }
     @Transactional(propagation = Propagation.REQUIRES_NEW,rollbackFor = Exception.class)
     @Override
@@ -37,8 +41,8 @@ public class MemberServiceImpl  implements MemberService {
         MemberPOExample memberPOExample=new MemberPOExample();
         MemberPOExample.Criteria criteria=memberPOExample.createCriteria();
         criteria.andLoginacctEqualTo(loginacct);
-        MemberPO memberPO=memberPOMapper.selectByExample(memberPOExample).get(0);
-        if (memberPO==null){
+        List<MemberPO> list=memberPOMapper.selectByExample(memberPOExample);
+        if (list.isEmpty()){
             log.info("1111");
             return false;
         }else {
