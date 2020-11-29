@@ -10,16 +10,19 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: index
+        - id: project
+          uri: lb://yang-crowd-project
+          predicates:
+            - Path=/project/**
+        - id: auth
           uri: lb://yang-crowd-auth
           predicates:
             - Path=/**
-#          filters:
-#            - TokenGatewayFilterFactory
+
   redis:
     host: 192.168.234.128
-#  session:
-#    store-type: redis
+  session:
+    store-type: redis
 eureka:
   client:
     fetch-registry: true

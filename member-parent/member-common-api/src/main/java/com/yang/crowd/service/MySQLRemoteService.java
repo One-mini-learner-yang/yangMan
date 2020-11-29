@@ -1,6 +1,7 @@
 package com.yang.crowd.service;
 
 import com.yang.crowd.entity.po.MemberPO;
+import com.yang.crowd.entity.vo.ProjectVO;
 import com.yang.crowd.util.ResultEntity;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,4 +16,6 @@ public interface MySQLRemoteService {
     public ResultEntity<String> saveMember(@RequestBody MemberPO memberPO);
     @RequestMapping("/judge/exist/member")
     public ResultEntity<Boolean> judgeExistMember(@RequestParam("loginacct")String loginacct);
+    @RequestMapping("/saveProjectVORemote")
+    public ResultEntity<String> saveProjectVORemote(@RequestBody ProjectVO projectVO,@RequestParam("memberId") Integer memberId);
 }

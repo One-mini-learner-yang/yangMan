@@ -15,4 +15,11 @@ public class CrowdConstant {
     public static final String REDIS_CODE_PREFIX="REDIS_CODE_PREFIX_";
     public static final String ATTR_NAME_MESSAGE="message";
     public static final String MESSAGE_CODE_IS_WRONG="验证码错误！";
+    public static final String MESSAGE_HEADER_PIC_UPLOAD_FAID = "头图上传失败" ;
+    public static final String ATTR_MANE_TEMPLE_PROJECT = "tempProject" ;
+    public static final String MESSAGE_HEADER_PIC_EMPTY = "头图不能为空！";
+    public static final String MESSAGE_DETAL_PIC_EMPTY = "详情图片不可为空";
+    public static final String MESSAGE_DETAL_PIC_UPLOAD_FAILD = "详情图片上传失败";
+    public static final String MESSAGE_TEMPLE_PROJECT_MISSING = "临时存储的ProjectVO丢失";
+    public static final String ATTR_NAME_PORTAL_DATDA = "portal_data";
 }

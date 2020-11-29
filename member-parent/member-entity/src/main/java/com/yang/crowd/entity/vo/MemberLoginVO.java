@@ -10,6 +10,7 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MemberLoginVO implements Serializable {
+    private static final long serialVersionUID = 1L;
     private int id;
     private String username;
     private String email;
