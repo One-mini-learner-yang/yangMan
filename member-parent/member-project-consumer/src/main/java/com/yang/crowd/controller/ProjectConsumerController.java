@@ -2,10 +2,7 @@ package com.yang.crowd.controller;
 
 import com.netflix.discovery.converters.Auto;
 import com.yang.crowd.constant.CrowdConstant;
-import com.yang.crowd.entity.vo.MemberConfirmInfoVO;
-import com.yang.crowd.entity.vo.MemberLoginVO;
-import com.yang.crowd.entity.vo.ProjectVO;
-import com.yang.crowd.entity.vo.ReturnVO;
+import com.yang.crowd.entity.vo.*;
 import com.yang.crowd.service.MySQLRemoteService;
 import com.yang.crowd.util.ResultEntity;
 import lombok.extern.slf4j.Slf4j;
@@ -38,12 +35,12 @@ public class ProjectConsumerController {
             try{
 //                此处部署到tomcat后使用
 //                String headPicPath=request.getServletContext().getRealPath("/")+headerPicture.getOriginalFilename();
-                String headPicPath="D:\\IdeaProjects\\yangMan\\member-parent\\member-project-consumer\\src\\main\\resources\\launch-upload\\"+headerPicture.getOriginalFilename();
+                String headPicPath="D:\\IdeaProjects\\yangMan\\member-parent\\member-authentication-consumer\\src\\main\\resources\\static\\launch-upload\\"+headerPicture.getOriginalFilename();
                 log.info(headPicPath);
                 File file=new File(headPicPath);
                 FileOutputStream fileOutputStream=new FileOutputStream(file);
                 fileOutputStream.write(headerPicture.getBytes());
-                projectVO.setHeaderPicturePath(headPicPath);
+                projectVO.setHeaderPicturePath("launch-upload/"+headerPicture.getOriginalFilename());
             }catch (Exception e){
                 e.printStackTrace();
                 modelMap.addAttribute(CrowdConstant.ATTR_NAME_MESSAGE,CrowdConstant.MESSAGE_HEADER_PIC_UPLOAD_FAID);
@@ -63,11 +60,11 @@ public class ProjectConsumerController {
                 try{
 //                    此处部署到tomcat后使用
 //                    String detailPicPath=request.getServletContext().getRealPath("/")+detailPicture.getOriginalFilename();
-                    String detailPicPath="D:\\IdeaProjects\\yangMan\\member-parent\\member-project-consumer\\src\\main\\resources\\launch-upload\\"+detailPicture.getOriginalFilename();
+                    String detailPicPath="D:\\IdeaProjects\\yangMan\\member-parent\\member-authentication-consumer\\src\\main\\resources\\static\\launch-upload\\"+detailPicture.getOriginalFilename();
                     File file=new File(detailPicPath);
                     FileOutputStream fileOutputStream=new FileOutputStream(file);
                     fileOutputStream.write(detailPicture.getBytes());
-                    detailPicPaths.add(detailPicPath);
+                    detailPicPaths.add("launch-upload/"+headerPicture.getOriginalFilename());
                 }catch (Exception e){
                     e.printStackTrace();
                     modelMap.addAttribute(CrowdConstant.ATTR_NAME_MESSAGE,CrowdConstant.MESSAGE_DETAL_PIC_UPLOAD_FAILD);
@@ -87,7 +84,7 @@ public class ProjectConsumerController {
     @ResponseBody
     @RequestMapping("/project/create/upload/return/picture.json")
     public ResultEntity<String> uploadReturnPicture(MultipartFile returnPicture) throws FileNotFoundException {
-        String returnPicturePath="D:\\IdeaProjects\\yangMan\\member-parent\\member-project-consumer\\src\\main\\resources\\return-upload\\"+returnPicture.getOriginalFilename();
+        String returnPicturePath="D:\\IdeaProjects\\yangMan\\member-parent\\member-authentication-consumer\\src\\main\\resources\\static\\return-upload\\"+returnPicture.getOriginalFilename();
         File file=new File(returnPicturePath);
         FileOutputStream fileOutputStream=new FileOutputStream(file);
         try{
@@ -96,7 +93,7 @@ public class ProjectConsumerController {
             e.printStackTrace();
             return ResultEntity.failed(e.getMessage());
         }
-        return ResultEntity.successWithData(returnPicturePath);
+        return ResultEntity.successWithData("return-upload/"+returnPicture.getOriginalFilename());
     }
     @ResponseBody
     @RequestMapping("/project/create/save/return.json")
@@ -152,5 +149,14 @@ public class ProjectConsumerController {
         }
         session.removeAttribute(CrowdConstant.ATTR_MANE_TEMPLE_PROJECT);
         return "redirect:http://localhost/project/create/success";
+    }
+    @RequestMapping("/project/get/detail/remote/{projectid}")
+    public String getProjectDetail(@PathVariable("projectid")Integer projectId,ModelMap modelMap){
+        ResultEntity<DetailProjectVO> resultEntity=mySQLRemoteService.getDetailProjectVORemote(projectId);
+        if (ResultEntity.SUCCESS.equals(resultEntity.getResult())){
+            DetailProjectVO detailProjectVO=resultEntity.getData();
+            modelMap.addAttribute("detailProjectVO",detailProjectVO);
+        }
+        return "project-detail";
     }
 }

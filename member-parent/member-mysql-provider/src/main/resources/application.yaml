@@ -21,7 +21,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
 mybatis:
-  mapper-locations: MemberPOMapper.xml,MemberConfirmInfoPOMapper.xml,MemberLaunchInfoPOMapper.xml,ProjectItemPicPOMapper.xml,ProjectPOMapper.xml,ReturnPOMapper.xml,TagPOMapper.xml,TypePOMapper.xml
+  mapper-locations: MemberPOMapper.xml,MemberConfirmInfoPOMapper.xml,MemberLaunchInfoPOMapper.xml,ProjectItemPicPOMapper.xml,ProjectPOMapper.xml,ReturnPOMapper.xml,TagPOMapper.xml,TypePOMapper.xml,AddressPOMapper.xml,OrderPOMapper.xml,OrderProjectPOMapper.xml
 
 logging:
   level:

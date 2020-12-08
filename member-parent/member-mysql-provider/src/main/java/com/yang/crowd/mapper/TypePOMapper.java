@@ -1,9 +1,10 @@
 package com.yang.crowd.mapper;
 
-import com.yang.crowd.entity.TypePOExample;
+import com.yang.crowd.entity.po.TypePOExample;
 import java.util.List;
 
 import com.yang.crowd.entity.po.TypePO;
+import com.yang.crowd.entity.po.TypePOExample;
 import org.apache.ibatis.annotations.Param;
 
 public interface TypePOMapper {

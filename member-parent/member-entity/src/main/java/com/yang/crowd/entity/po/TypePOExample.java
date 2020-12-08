@@ -1,4 +1,4 @@
-package com.yang.crowd.entity;
+package com.yang.crowd.entity.po;
 
 import java.util.ArrayList;
 import java.util.List;

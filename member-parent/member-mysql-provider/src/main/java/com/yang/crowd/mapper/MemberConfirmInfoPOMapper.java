@@ -1,8 +1,9 @@
 package com.yang.crowd.mapper;
 
-import com.yang.crowd.entity.MemberConfirmInfoPO;
+import com.yang.crowd.entity.po.MemberConfirmInfoPO;
 import java.util.List;
 
+import com.yang.crowd.entity.po.MemberConfirmInfoPO;
 import com.yang.crowd.entity.po.MemberConfirmInfoPOExample;
 import org.apache.ibatis.annotations.Param;
 

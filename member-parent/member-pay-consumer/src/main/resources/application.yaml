@@ -1,0 +1,35 @@
+server:
+  port: 9000
+
+spring:
+  application:
+    name: yang-crowd-pay
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  redis:
+    host: 192.168.234.128
+  session:
+    store-type: redis
+  main:
+    allow-bean-definition-overriding: true
+
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:1000/eureka/
+
+ali:
+  pay:
+    alipay-public-key: MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAkIhMgitp4CTewODkEnw0bkp6+bFDVL1CFWoylGAYQDJATUcEpMveRW/fjilgevynb6YcP0Z8XrCJuCGyrBqCg2jmrJra1I38BmZ+SSSpaP1dSwb1xSgkpUDLSQ9NO3SCWBwaaGTRv8Z4nL0EieOKyJeJjAaIP4J1Azb3w/lO20KC3/dJ9hJlXmRtncSxrWAxs/rDqcFVomdJEgWKy3+mxMSe/CkRCJeJj+Y1IcqFms2n75MqJcyBGxUhrCBo6ifWN/vwJM1Qf+a1hW1cO2A0UI6W5/9+3Wmis7dYanE/bNQekqAeJHueDsC3bHQCMni0psOunHwnx8VT5mGv1C7iDwIDAQAB
+    app-id: 2016102500761057
+    charset: utf-8
+    gateway-url: https://openapi.alipaydev.com/gateway.do
+    merchant-private-key: MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCMLrbZCMYtfz4Ds/MWVMpt4sHbIknESr4flup5FIrTrW9gGbd2eVccsiSNtwJUiozGBD4QZw3EQo1vx1DiReGJy6gAe+CI1Q/Mt4uEMOxy6rDNk33DiophDc5r6afHS8eFcCu2DHen9K8WNnM/l4ewJ920OQ18JT1TQHj56hqz2vnT8UCTJJluHIkYEadT+zWWEAk7ZBHFqAx6rEWQ87gLnHvyOC1lIgNJ4mbBFl2irWmikQAkOTFoNRhfrqclj00YlVfhRaV953/QpK+6ryZaTDp0VKv/7OsSiA+K0TuEyJnhMdBg02lPBEKOZbROHm67JE2KP3KRD68DlhLE3YQNAgMBAAECggEAEw3WdLGonk6JU1+GTya/TShhSTPj6vZt2UVeIY8VP6h3Vwynz0a2/IOKTGjvvCYI9HFnLjuTt3WEXAkviVIOUfiIoWg1IOQ0/ZKFODaeLRCRb5/4nDecj4yc3jYoRAKc4BpbFqejLAUqN063Y5FpNBx3GiQXHSTCrSo6R132uzN42pOHX608zZodqm/+FFrDyDgSKHI4JU1gqMIt5ZCQgMK1ZIbQjczdGHTpMUE1bujUgBqQx6aB5wQbW3rH5N5E+Noeudp7CT6DEjXrq6xuRbUKAOTjotCBLTpUQWielxPZ3e9QTSQtrDINPhI5wZhMpPsP71S1C65y6aZYUbK1AQKBgQDK/b/L5qU9Nv/0If7ZR2s/tsJn1CBMEzYbMzTzsbZFFA4K9r/4uUCiVMrU9syrV0wKV7oc+owsIkUewWjAzKKThcU7jmnoTWXl/aHDwBi6N1w8fIYeqLaVpQeZ48Hk2pTRY/Z93mwFH+vF8um50QDSv6T5GF2S3dfCUlTbrZjTkQKBgQCwyhy1TNbTVvwSPnIzbXF+dykB1X5hljzkkq27LRt6hA0sJcQolWyA4FfH3ukPDtmhP5nSblK87I+w+t0UrvZT+vx+m+8GiYzbcQsHhZALSORGcpu6S7aBooJfA6/QEFNAyyLF6LK4NClX7xH/NPssjmph01gI147ejOS8jMcyvQKBgEgDcZGSx7hJ1M/1Z4YJ0kCOQ7W2CaczgZRwvC5gM3uaO8kj9ML2ZbmxPywCSmXW2IEq0joJoMTfe4oHr3QGpP6VDH2ubmAdZTMMoeDiO2OE1FIZEzO5Qt0f6OxtYpIgAX+vaPkKeWPwCSL2pHhpb1NU7d/5Buldjne/4Z71nSwhAoGAHGRJGgC+G3DDyLZIpuOzr2i5qDa+NjPnkZnQ1teWqyVb7DQgfZgJteTRlCLDcQykfNX3ASmAliCzruuK59B1dOVA+aBXUchzW6aa69lSWc2aA4pSYifYppcPsuynppWImUZGTlxhn12ZKisVy9OZZv10LkO/xqO/qRQdg/5j200CgYEAqm6XpWmC0Ps3IlmIGV1l8cuTM16NRgqS66LvwhZVeK4asVyNWHAKXhtxavP+9s3QoK/fO89ay/6DMCxYquzd9MYAtJevIt9bBVUzCjss8537a9HSQkylWVDTqdgoMoSEAA7NnHqYgKhKpO/igJs+dtCbAEm+P+cs3jlA8+4exHk=
+#    内网穿透的地址
+    notify-url: http://wi2ru7.natappfree.cc/pay/notify
+    return-url: http://wi2ru7.natappfree.cc/pay/return
+    sign-type: RSA2

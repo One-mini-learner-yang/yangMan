@@ -21,5 +21,5 @@ public class CrowdConstant {
     public static final String MESSAGE_DETAL_PIC_EMPTY = "详情图片不可为空";
     public static final String MESSAGE_DETAL_PIC_UPLOAD_FAILD = "详情图片上传失败";
     public static final String MESSAGE_TEMPLE_PROJECT_MISSING = "临时存储的ProjectVO丢失";
-    public static final String ATTR_NAME_PORTAL_DATDA = "portal_data";
+    public static final String ATTR_NAME_PORTAL_DATA = "portal_data";
 }

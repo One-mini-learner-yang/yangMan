@@ -21,7 +21,7 @@ public class ProjectVO implements Serializable {
     // 项目描述
     private String projectDescription;
     // 计划筹集的金额
-    private Integer money;
+    private Long money;
     // 筹集资金的天数
     private Integer day;
     // 创建项目的日期

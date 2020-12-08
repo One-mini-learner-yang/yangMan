@@ -10,10 +10,18 @@ spring:
         locator:
           enabled: true
       routes:
+        - id: pay
+          uri: lb://yang-crowd-pay
+          predicates:
+            - Path=/pay/**
         - id: project
           uri: lb://yang-crowd-project
           predicates:
             - Path=/project/**
+        - id: order
+          uri: lb://yang-crowd-order
+          predicates:
+            - Path=/order/**
         - id: auth
           uri: lb://yang-crowd-auth
           predicates:

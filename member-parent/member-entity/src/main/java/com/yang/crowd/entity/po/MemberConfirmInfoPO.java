@@ -1,4 +1,4 @@
-package com.yang.crowd.entity;
+package com.yang.crowd.entity.po;
 
 public class MemberConfirmInfoPO {
     private Integer id;

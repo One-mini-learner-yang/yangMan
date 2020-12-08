@@ -326,7 +326,7 @@
         projectid, type, supportmoney, content, count, signalpurchase, purchase, freight, invoice, returndate, describ_pic_path
     ) values
     <foreach collection="returnVOList" item="returnVO" separator=",">
-      ( #{projectId}, #{returnVO.type}, #{returnVO.supportmoney}, #{returnVO.content}, #{returnVO.count}, #{returnVO.signalpurchase}, #{returnVO.purchase}, #{returnVO.freight},#{returnVO.invoice}, #{returnVO.returndate}, #{returnVO.describPicPath}
+      ( #{projectId}, #{returnVO.type}, #{returnVO.supportmoney}, #{returnVO.content}, #{returnVO.count}, #{returnVO.signalpurchase}, #{returnVO.purchase}, #{returnVO.freight},#{returnVO.invoice}, #{returnVO.returndate}, #{returnVO.describPicPath})
     </foreach>
   </insert>
 </mapper>

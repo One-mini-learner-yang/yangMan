@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.yang.crowd.entity.po.ProjectPO;
 import com.yang.crowd.entity.po.ProjectPOExample;
+import com.yang.crowd.entity.vo.DetailProjectVO;
+import com.yang.crowd.entity.vo.ProjectTypeVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 public interface ProjectPOMapper {
@@ -32,4 +34,8 @@ public interface ProjectPOMapper {
     void insertTypeRelationShip(@Param("typeIdList") List<Integer> typeIdList,@Param("projectId") Integer projectId);
 
     void insertTagRelationship(@Param("tagIdList") List<Integer> tagIdList,@Param("projectId") Integer projectId);
+
+    List<ProjectTypeVO> selectPortalTypeVOList();
+
+    DetailProjectVO selectDetailProjectVO(@Param("projectid")Integer projectId);
 }

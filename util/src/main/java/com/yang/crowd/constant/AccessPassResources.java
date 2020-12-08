@@ -25,6 +25,8 @@ public class AccessPassResources {
         STATIC_RES_SET.add("jquery");
         STATIC_RES_SET.add("script");
         STATIC_RES_SET.add("ztree");
+        STATIC_RES_SET.add("launch-upload");
+        STATIC_RES_SET.add("return-upload");
     }
 
     public static boolean judgeCurrentServletPathWetherStaticResource(String servletPath){
